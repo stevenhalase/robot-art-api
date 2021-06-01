@@ -23,7 +23,6 @@ db.once('open', function() {
 });
 
 const app = express();
-const port = 3000;
 
 app.use(cors());
 
@@ -202,6 +201,6 @@ app.delete('/robot/:robotId', async (req, res) => {
 	res.send('Deleted robot');
 });
 
-app.listen(port, () => {
-	console.log(`Example app listening at http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+	console.log(`Listening at port: ${process.env.PORT}`);
 });
